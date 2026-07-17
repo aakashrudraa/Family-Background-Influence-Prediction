@@ -112,7 +112,8 @@ streamlit run prediction.py
 
 ## 📸 Screenshots
 
-(Add screenshots of your web application here.)
+<img width="913" height="787" alt="image" src="https://github.com/user-attachments/assets/20acafd9-63a7-4b97-9802-e5d5fb079428" />
+
 
 ---
 
