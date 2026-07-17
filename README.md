@@ -12,7 +12,7 @@ based on family background information using Gradient Boosting Regression models
 
 ## 🚀 Live Demo
 
-🔗 https://your-streamlit-app-url.streamlit.app
+🔗 https://family-background-influence-prediction.streamlit.app
 
 ---
 
