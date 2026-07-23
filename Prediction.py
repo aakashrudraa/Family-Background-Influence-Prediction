@@ -180,6 +180,25 @@ def main():
 
         st.session_state["predicted"] = True
 
+        st.markdown("---")
+        st.subheader("Understanding the Predicted Scores")
+
+        st.markdown("""
+        ### 🔹 Self-Efficacy (SE)
+        Self-Efficacy refers to an individual's belief in their ability to successfully perform tasks, overcome challenges, and achieve goals. A higher score indicates greater confidence in handling difficult situations and accomplishing objectives.
+
+        ### 🔹 Career Success Expectation (CSE)
+        Career Success Expectation reflects how positively an individual views their future career prospects. A higher score suggests stronger confidence in achieving career growth, professional success, and long-term career aspirations.
+
+        ### 🔹 Life Success Expectation (LSE)
+        Life Success Expectation measures an individual's optimism about achieving important life goals and leading a fulfilling life. A higher score indicates greater confidence in attaining personal, financial, and social success in the future.
+        """)
+
+        st.info("""
+        **Note:** The predicted scores are generated using a machine learning model trained on historical data. These predictions reflect statistical patterns learned from the dataset and should be interpreted as informative estimates rather than definitive measures of an individual's abilities, personality, or future outcomes.
+        """)
+        st.markdown("---")
+
         st.success(f"Self-Efficacy Score : {prediction_se[0]:.2f}")
         if prediction_se[0] < 29:
             st.warning("Your Self-Efficacy score is low. Consider seeking support or resources to improve your self-efficacy. You may underestimate your abilities or feel less confident when facing challenges. Developing skills gradually and gaining successful experiences can help improve self-confidence.")
