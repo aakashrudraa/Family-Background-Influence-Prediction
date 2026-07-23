@@ -23,6 +23,7 @@ The objective is not to judge an individual but to demonstrate how machine learn
 
 ---
 
+
 ## Features
 
 - Predicts three psychological indicators from family background information.
@@ -30,7 +31,11 @@ The objective is not to judge an individual but to demonstrate how machine learn
 - Questionnaire to compare predicted scores with actual self-reported scores.
 - Easy-to-understand interpretation of prediction results.
 - End-to-end machine learning pipeline from training to deployment.
+---
 
+## 🚀 Live Demo
+
+🔗 https://family-backgrounds-influence-prediction.streamlit.app/
 ---
 
 ## Machine Learning Workflow
