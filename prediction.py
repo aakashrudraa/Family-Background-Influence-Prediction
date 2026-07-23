@@ -181,8 +181,33 @@ def main():
         st.session_state["predicted"] = True
 
         st.success(f"Self-Efficacy Score : {prediction_se[0]:.2f}")
+        if prediction_se[0] < 29:
+            st.warning("Your Self-Efficacy score is low. Consider seeking support or resources to improve your self-efficacy. You may underestimate your abilities or feel less confident when facing challenges. Developing skills gradually and gaining successful experiences can help improve self-confidence.")
+        elif prediction_se[0] < 36:
+            st.info("Your Self-Efficacy score is moderate. You have a reasonable level of self-efficacy, but there may be areas where you can further enhance your confidence and belief in your abilities. Consider setting achievable goals and seeking opportunities for skill development to strengthen your self-efficacy. You generally believe in your abilities but may hesitate in unfamiliar or difficult situations.")
+        else:
+            st.success("Your Self-Efficacy score is high. You have a strong belief in your abilities and are likely to approach challenges with confidence. Your high self-efficacy can contribute to better performance and resilience in various aspects of life. Keep leveraging your strengths and continue to build on your successes.")
+
+
+
         st.success(f"Career Self-Efficacy Score : {prediction_cse[0]:.2f}")
+        if prediction_cse[0] < 29:
+            st.warning("Your Career Self-Efficacy score is low. You may feel uncertain about your future career path or opportunities. Career guidance and skill development can help improve confidence.")
+        elif prediction_cse[0] < 36:
+            st.info("Your Career Self-Efficacy score is moderate. You have a reasonable level of career self-efficacy, You have balanced expectations. Building career skills, networking, and gaining practical experience may strengthen your confidence.")
+        else:
+            st.success("Your Career Self-Efficacy score is high. You have a strong belief in your career abilities and are likely to approach challenges with confidence. Your high career self-efficacy can contribute to better performance and resilience in various aspects of life. Keep leveraging your strengths and continue to build on your successes.")
+
+
+
         st.success(f"Life Self-Efficacy Score : {prediction_lse[0]:.2f}")
+        if prediction_lse[0] < 29:
+            st.warning("Your Life Self-Efficacy score is low. You may have doubts about achieving long-term goals. Setting realistic milestones and celebrating progress can improve your outlook.")
+        elif prediction_lse[0] < 36:
+            st.info("Your Life Self-Efficacy score is moderate. You have a reasonable level of life self-efficacy, You have moderate optimism regarding future life achievements, with room for greater confidence. Consider setting achievable goals and seeking opportunities for skill development to strengthen your life self-efficacy. You generally have a positive outlook toward achieving your long-term personal and life goals, but may experience some doubts or uncertainties.")
+        else:
+            st.success("Your Life Self-Efficacy score is high. You generally have a positive outlook toward achieving your long-term personal and life goals.")
+
 # Adding Questionnaire Section
         # st.markdown("---")
 
@@ -200,17 +225,3 @@ def main():
         st.switch_page("pages/Questionnaire.py")
 if __name__ == "__main__":
     main()
-# import streamlit as st
-# import joblib
-
-# st.title("Testing Model Loading")
-
-# try:
-#     loaded_model = joblib.load("Family_trained_model.pkl")
-#     st.success("✅ Model Loaded Successfully")
-
-# except Exception as e:
-#     st.error("❌ Error while loading model")
-#     st.exception(e)
-
-    
