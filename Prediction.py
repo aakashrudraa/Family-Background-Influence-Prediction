@@ -15,6 +15,15 @@ import streamlit as st
 
 loaded_model = joblib.load("Family_trained_model.pkl")
 
+if "pred_se" not in st.session_state:
+    st.session_state["pred_se"] = None
+
+if "pred_cse" not in st.session_state:
+    st.session_state["pred_cse"] = None
+
+if "pred_lse" not in st.session_state:
+    st.session_state["pred_lse"] = None
+
 def score_prediction(input_data):
 
     input_array = np.asarray(input_data).reshape(1,-1)
@@ -172,7 +181,6 @@ def main():
     
         prediction = score_prediction(input_data)
         prediction_se, prediction_cse, prediction_lse = prediction
-        prediction_se, prediction_cse, prediction_lse = score_prediction(input_data)
 
         st.session_state["pred_se"] = float(prediction_se[0])
         st.session_state["pred_cse"] = float(prediction_cse[0])

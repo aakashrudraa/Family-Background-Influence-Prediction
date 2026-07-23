@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 options = [
     "1 - Strongly Disagree",
     "2 - Disagree",
@@ -61,6 +62,12 @@ if st.button("Calculate My Scores"):
     st.session_state["actual_se"] = se_total
     st.session_state["actual_cse"] = cse_total
     st.session_state["actual_lse"] = lse_total
+
+    se_total = st.session_state.get("actual_se")
+    cse_total = st.session_state.get("actual_cse")
+    lse_total = st.session_state.get("actual_lse")
+
+
 
     st.session_state["questionnaire_done"] = True
 
