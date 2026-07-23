@@ -77,29 +77,58 @@ if st.button("Calculate My Scores"):
 
 
     if st.session_state.get("questionnaire_done", False):
+        if se_total is not None and cse_total is not None and lse_total is not None:
 
-        st.header("Prediction vs Actual")
+            st.header("Prediction vs Evaluation")
 
-        comparison = {
-            "Score":[
-                "Self-Efficacy",
-                "Career Success",
-                "Life Success"
-            ],
-            "Predicted":[
-                st.session_state["pred_se"],
-                st.session_state["pred_cse"],
-                st.session_state["pred_lse"]
-            ],
-            "Actual":[
-                st.session_state["actual_se"],
-                st.session_state["actual_cse"],
-                st.session_state["actual_lse"]
-            ]
-        }
+            comparison = {
+                "Score": [
+                    "Self-Efficacy",
+                    "Career Success Expectation",
+                    "Life Success Expectation"
+                ],
+                "Predicted": [
+                    round(se_total, 2),
+                    round(cse_total, 2),
+                    round(lse_total, 2)
+                ],
+                "Actual": [
+                    se_total,
+                    cse_total,
+                    lse_total
+                ]
+            }
 
-        st.table(comparison)
-    #     comparison["Difference"] = [
-    # abs(st.session_state["pred_se"]-st.session_state["actual_se"]),
-    # abs(st.session_state["pred_cse"]-st.session_state["actual_cse"]),
-    # abs(st.session_state["pred_lse"]-st.session_state["actual_lse"])]
+            st.table(comparison)
+
+        else:
+            st.info(
+                "No AI prediction is available. These are your questionnaire-based evaluation scores. "
+                "Generate predictions on the Prediction page if you would like to compare them."
+            )
+
+    #     st.header("Prediction vs Actual")
+
+    #     comparison = {
+    #         "Score":[
+    #             "Self-Efficacy",
+    #             "Career Success",
+    #             "Life Success"
+    #         ],
+    #         "Predicted":[
+    #             st.session_state["pred_se"],
+    #             st.session_state["pred_cse"],
+    #             st.session_state["pred_lse"]
+    #         ],
+    #         "Actual":[
+    #             st.session_state["actual_se"],
+    #             st.session_state["actual_cse"],
+    #             st.session_state["actual_lse"]
+    #         ]
+    #     }
+
+    #     st.table(comparison)
+    # #     comparison["Difference"] = [
+    # # abs(st.session_state["pred_se"]-st.session_state["actual_se"]),
+    # # abs(st.session_state["pred_cse"]-st.session_state["actual_cse"]),
+    # # abs(st.session_state["pred_lse"]-st.session_state["actual_lse"])]
