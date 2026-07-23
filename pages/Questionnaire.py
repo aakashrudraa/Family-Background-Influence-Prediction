@@ -51,33 +51,31 @@ lse10 = st.slider("10. I believe I have the ability to build the future I desire
 
 if st.button("Calculate My Scores"):
 
-    se_total = sum([se1, se2, se3, se4, se5, se6, se7, se8, se9, se10])
+    se_total_actual = sum([se1, se2, se3, se4, se5, se6, se7, se8, se9, se10])
 
-    cse_total = sum([cse1, cse2, cse3, cse4, cse5,
-                     cse6, cse7, cse8, cse9, cse10])
+    cse_total_actual = sum([cse1, cse2, cse3, cse4, cse5,
+                           cse6, cse7, cse8, cse9, cse10])
 
-    lse_total = sum([lse1, lse2, lse3, lse4, lse5,
+    lse_total_actual = sum([lse1, lse2, lse3, lse4, lse5,
                      lse6, lse7, lse8, lse9, lse10])
     
     # st.session_state["actual_se"] = se_total
     # st.session_state["actual_cse"] = cse_total
     # st.session_state["actual_lse"] = lse_total
 
-    se_total = st.session_state.get("actual_se")
-    cse_total = st.session_state.get("actual_cse")
-    lse_total = st.session_state.get("actual_lse")
-
-
+    se_total_pred = st.session_state.get("actual_se")
+    cse_total_pred = st.session_state.get("actual_cse")
+    lse_total_pred = st.session_state.get("actual_lse")
 
     st.session_state["questionnaire_done"] = True
 
-    st.success(f"Self-Efficacy Score: {se_total}")
-    st.success(f"Career Success Expectation Score: {cse_total}")
-    st.success(f"Life Success Expectation Score: {lse_total}")
+    st.success(f"Self-Efficacy Score: {se_total_actual}")
+    st.success(f"Career Success Expectation Score: {cse_total_actual}")
+    st.success(f"Life Success Expectation Score: {lse_total_actual}")
 
 
     if st.session_state.get("questionnaire_done", False):
-        if se_total is not None and cse_total is not None and lse_total is not None:
+        if se_total_pred is not None and cse_total_pred is not None and lse_total_pred is not None:
 
             st.header("Prediction vs Evaluation")
 
@@ -88,14 +86,14 @@ if st.button("Calculate My Scores"):
                     "Life Success Expectation"
                 ],
                 "Predicted": [
-                    round(se_total, 2),
-                    round(cse_total, 2),
-                    round(lse_total, 2)
+                    round(se_total_pred, 2),
+                    round(cse_total_pred, 2),
+                    round(lse_total_pred, 2)
                 ],
                 "Actual": [
-                    se_total,
-                    cse_total,
-                    lse_total
+                    se_total_actual,
+                    cse_total_actual,
+                    lse_total_actual
                 ]
             }
 
