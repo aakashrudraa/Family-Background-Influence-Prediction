@@ -59,9 +59,9 @@ if st.button("Calculate My Scores"):
     lse_total = sum([lse1, lse2, lse3, lse4, lse5,
                      lse6, lse7, lse8, lse9, lse10])
     
-    st.session_state["actual_se"] = se_total
-    st.session_state["actual_cse"] = cse_total
-    st.session_state["actual_lse"] = lse_total
+    # st.session_state["actual_se"] = se_total
+    # st.session_state["actual_cse"] = cse_total
+    # st.session_state["actual_lse"] = lse_total
 
     se_total = st.session_state.get("actual_se")
     cse_total = st.session_state.get("actual_cse")
@@ -99,7 +99,7 @@ if st.button("Calculate My Scores"):
         }
 
         st.table(comparison)
-        comparison["Difference"] = [
-    abs(st.session_state["pred_se"]-st.session_state["actual_se"]),
-    abs(st.session_state["pred_cse"]-st.session_state["actual_cse"]),
-    abs(st.session_state["pred_lse"]-st.session_state["actual_lse"])]
+    #     comparison["Difference"] = [
+    # abs(st.session_state["pred_se"]-st.session_state["actual_se"]),
+    # abs(st.session_state["pred_cse"]-st.session_state["actual_cse"]),
+    # abs(st.session_state["pred_lse"]-st.session_state["actual_lse"])]
