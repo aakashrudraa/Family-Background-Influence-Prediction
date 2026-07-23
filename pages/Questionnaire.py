@@ -59,13 +59,13 @@ if st.button("Calculate My Scores"):
     lse_total_actual = sum([lse1, lse2, lse3, lse4, lse5,
                      lse6, lse7, lse8, lse9, lse10])
     
-    # st.session_state["actual_se"] = se_total
-    # st.session_state["actual_cse"] = cse_total
-    # st.session_state["actual_lse"] = lse_total
+    st.session_state["se_total_actual"] = se_total_actual
+    st.session_state["cse_total_actual"] = cse_total_actual
+    st.session_state["lse_total_actual"] = lse_total_actual
 
-    se_total_pred = st.session_state.get("actual_se")
-    cse_total_pred = st.session_state.get("actual_cse")
-    lse_total_pred = st.session_state.get("actual_lse")
+    se_total_pred = st.session_state.get("pred_se")
+    cse_total_pred = st.session_state.get("pred_cse")
+    lse_total_pred = st.session_state.get("pred_lse")
 
     st.session_state["questionnaire_done"] = True
 

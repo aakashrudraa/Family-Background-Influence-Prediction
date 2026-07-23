@@ -1,14 +1,4 @@
-# # -*- coding: utf-8 -*-
-# """
-# Spyder Editor
 
-# This is a temporary script file.
-
-
-# import numpy as np
-# import pickle 
-# loaded_model=pickle.load(open("C:/Users/aakas/OneDrive/Desktop/Project/Project_1/Deploy/Family_trained_model.sav",'rb'))
-# """
 import numpy as np
 import joblib
 import streamlit as st
